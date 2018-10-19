@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MidTermActivity_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+             double Gross_Income, Deduction, NetIncome, TotalNetIncome,sss,pagibig,philhealth,loans;
+            int Num_hrs,Num_day,rate_per_hour;
+            /** getting the value of the variable*/
+
+            //getting the gross income
+             Console.Write("Enter your numbers of working hours:");
+                Num_hrs = Convert.ToInt32(Console.ReadLine());
+
+             Console.Write("Enter your numbers of working days:");
+                Num_day = Convert.ToInt32(Console.ReadLine());
+
+             Console.Write("Enter Your number of rate per hour:");
+                rate_per_hour = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("--------------------------------");
+
+            //getting the deduction
+            Console.Write("Enter your SSS deduction:");
+                sss = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter your pagibig deduction:");
+                pagibig = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter your philhealth deduction:");
+              philhealth = Convert.ToDouble(Console.ReadLine());
+
+             Console.Write("Enter Your Loans:");
+              loans = Convert.ToDouble(Console.ReadLine());
+
+              Console.WriteLine("--------------------------------");
+
+            /** calculating the income and deduction*/
+              Gross_Income = Num_hrs * Num_day * rate_per_hour;
+              Deduction = sss + pagibig + philhealth + loans;
+              NetIncome = Gross_Income - Deduction;
+
+              if (NetIncome > 50000) {
+                  TotalNetIncome = NetIncome - (NetIncome * 0.20);
+                  Console.Write("Gross Income:Php {0}\nDeduction:Php {1}\nNet Income:Php {2}\nTotal Net Income:Php {3}", Gross_Income, Deduction, NetIncome, TotalNetIncome);
+              }
+              else if ((NetIncome <= 50000) && (NetIncome >= 39999) && (NetIncome != 40000))
+              {
+                  TotalNetIncome = NetIncome - (NetIncome * 0.17);
+                  Console.Write("Gross Income:Php {0}\nDeduction:Php {1}\nNet Income:Php {2}\nTotal Net Income:Php {3}", Gross_Income, Deduction, NetIncome, TotalNetIncome);
+              }
+              else if ((NetIncome <= 40000) && (NetIncome >= 34999) && (NetIncome != 35000))
+              {
+                  TotalNetIncome = NetIncome - (NetIncome * 0.15);
+                  Console.Write("Gross Income:Php {0}\nDeduction:Php {1}\nNet Income:Php {2}\nTotal Net Income:Php {3}", Gross_Income, Deduction, NetIncome, TotalNetIncome);
+              }
+              else if ((NetIncome <= 35000) && (NetIncome >= 29999) && (NetIncome != 30000))
+              {
+                  TotalNetIncome = NetIncome - (NetIncome * 0.10);
+                  Console.Write("Gross Income:Php {0}\nDeduction:Php {1}\nNet Income:Php {2}\nTotal Net Income:Php {3}", Gross_Income, Deduction, NetIncome, TotalNetIncome);
+              }
+              else if ((NetIncome <= 30000) && (NetIncome >= 24999) && (NetIncome != 25000))
+              {
+                  TotalNetIncome = NetIncome - (NetIncome * 0.07);
+                  Console.Write("Gross Income:Php {0}\nDeduction:Php {1}\nNet Income:Php {2}\nTotal Net Income:Php {3}", Gross_Income, Deduction, NetIncome, TotalNetIncome);
+              }
+              else if ((NetIncome <= 25000) && (NetIncome >= 14999) && (NetIncome != 15000))
+              {
+                  TotalNetIncome = NetIncome - (NetIncome * 0.5);
+                  Console.Write("Gross Income:Php {0}\nDeduction:Php {1}\nNet Income:Php {2}\nTotal Net Income:Php {3}", Gross_Income, Deduction, NetIncome, TotalNetIncome);
+              }
+              else if ((NetIncome <= 15000) && (NetIncome >= 10001) && (NetIncome != 10000))
+              {
+                  TotalNetIncome = NetIncome - (NetIncome * 0.03);
+                  Console.Write("Gross Income:Php {0}\nDeduction:Php {1}\nNet Income:Php {2}\nTotal Net Income:Php {3}", Gross_Income, Deduction, NetIncome, TotalNetIncome);
+              }
+              else {
+                  TotalNetIncome = NetIncome - (NetIncome * 0.01);
+                  Console.Write("Gross Income:Php {0}\nDeduction:Php {1}\nNet Income:Php {2}\nTotal Net Income:Php {3}", Gross_Income, Deduction, NetIncome, TotalNetIncome);
+              }
+              Console.ReadKey();
+
+        }
+    }
+}
